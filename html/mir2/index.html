@@ -1,0 +1,3803 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>/* copy from https://github.com/sindresorhus/github-markdown-css/ */
+
+html,body{background-color: #2d2d2d;}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
+  color: #cccccc;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+.markdown-body figure{margin:0;padding:0; display:table;}
+.markdown-body figure figcaption{font-size:92%; text-align:center; color:#999999;}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #66cccc;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1:hover .anchor .octicon-link:before,
+.markdown-body h2:hover .anchor .octicon-link:before,
+.markdown-body h3:hover .anchor .octicon-link:before,
+.markdown-body h4:hover .anchor .octicon-link:before,
+.markdown-body h5:hover .anchor .octicon-link:before,
+.markdown-body h6:hover .anchor .octicon-link:before {
+  width: 16px;
+  height: 16px;
+  content: ' ';
+  display: inline-block;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' width='16' height='16' aria-hidden='true'%3E%3Cpath fill-rule='evenodd' fill='%2366cccc' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: initial;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+.markdown-body strong{
+  color: #f99157;
+}
+.markdown-body em{
+  color: #ffcc66;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: initial;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #99cc99;
+  text-decoration: none;
+}
+.markdown-body mjx-container[jax="SVG"] > svg a{fill:#99cc99;stroke: #99cc99;}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr:after,
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 12px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  line-height: 12px;
+  color: #999999;
+  vertical-align: middle;
+  background-color: #333333;
+  border: 1px solid #494949;
+  border-radius: 3px;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.markdown-body:after,
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  clear: both;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body details,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: .25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #494949;
+  border: 0;
+}
+
+.markdown-body blockquote {
+  padding: 0 1em;
+  color: #9b9b9b;
+  border-left: .25em solid #f2777a;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  padding-bottom: .3em;
+  border-bottom: 1px solid #434343;
+  color: #66cccc;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+  color: #66cccc;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+  color: #66cccc;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+  color: #66cccc;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+  color: #66cccc;
+}
+
+.markdown-body h6 {
+  font-size: .85em;
+  color: #66cccc;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  padding: 6px 13px;
+  border: 1px solid #717171;
+}
+
+.markdown-body table tr {
+  background-color: #2d2d2d;
+  border-top: 1px solid #717171;
+}
+
+.markdown-body table th {
+  background-color: #434343;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #323232;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: initial;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: #333333;
+  color: #999999;
+  border-radius: 3px;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+   font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #333333;
+  border-radius: 3px;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: initial;
+  border: 0;
+  color: #999999;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+.markdown-body section.footnotes{
+    margin-top:48px;
+    border-top:solid 1px #494949;
+    padding-top:0px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .markdown-body mark{color: #111;}
+}
+
+/* PrismJS 1.23.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+@media print {
+    code[class*="language-"],
+    pre[class*="language-"] {
+        text-shadow: none;
+    }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background-color: #333333;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+    white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #48be66;
+}
+
+.token.punctuation {
+    color: #8b86c9;
+}
+
+.token.namespace {
+    opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #8b86c9;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #e6424b;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #$$codeBlockColor$$;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #c33795;
+}
+
+.token.function,
+.token.class-name {
+    color: #67878e;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #d38e63;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 1px solid #6b6b6b;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+  .line-numbers-rows > span {
+    display: block;
+    counter-increment: linenumber;
+  }
+
+    .line-numbers-rows > span:before {
+      content: counter(linenumber);
+      color: #6b6b6b;
+      display: block;
+      padding-right: 0.8em;
+      text-align: right;
+    }
+
+
+</style><style>.mweb-charts{background:#fff;}
+body{ box-sizing: border-box;
+    margin: 0 auto;
+    padding: 28px}
+@media print{
+    pre, code, pre code {
+     overflow: visible !important;
+     white-space: pre-wrap !important;       /* css-3 */
+     white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+     white-space: -pre-wrap !important;      /* Opera 4-6 */
+     white-space: -o-pre-wrap !important;    /* Opera 7 */
+     word-wrap: break-word !important;       /* Internet Explorer 5.5+ */
+    }
+    html,body{margin:0;padding:4px;}
+}
+
+</style><script>window.MathJax = {     tex: { tags: 'ams', displayMath: [ ['\\[', '\\]'] ] },     startup: {     pageReady() {       return MathJax.startup.defaultPageReady().then(function () {          window.mweb_mathjax_ready_val = 'yes';          if(window.mweb_mathjax_ready !== undefined){ mweb_mathjax_ready(); }       });     }   }};document.addEventListener('DOMContentLoaded', function(event) {    if (typeof Prism != 'undefined') {         Prism.highlightAll();     }});window.mweb_mathjax_ready_val = '';function theMWebMathJaxRenderIsReady(key){ return window.mweb_mathjax_ready_val; }</script><script>document.addEventListener('DOMContentLoaded', function(event) {window.mweb_mathjax_ready_val = 'yes';})</script></head><body><div id='markdown_content' class='markdown-body'><div class="mweb_toc"><ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C">基本操作</a>
+<ul>
+<li><a href="#%E6%B8%B8%E6%88%8F%E5%BF%AB%E6%8D%B7%E9%94%AE">游戏快捷键</a></li>
+<li><a href="#%E9%BC%A0%E6%A0%87">鼠标</a></li>
+<li><a href="#%E5%91%BD%E4%BB%A4">命令</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F">游戏系统</a>
+<ul>
+<li><a href="#%E7%81%B5%E7%89%A9">灵物</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A3%85%E5%A4%87%E5%A5%97%E8%A3%85">装备-套装</a>
+<ul>
+<li><a href="#%E6%98%86%E4%BB%91%E8%A3%85%E5%A4%87%E7%A5%9E%E7%89%A9%EA%B3%A4%EB%A5%9C%EC%8B%A0%EB%AC%BC">昆仑装备(神物)/곤륜(신물)</a></li>
+<li><a href="#%E6%98%86%E4%BB%91%E8%A3%85%E5%A4%87%E5%9C%A3%E7%89%A9%EA%B3%A4%EB%A5%9C%EC%84%B1%EB%AC%BC">昆仑装备(圣物)/곤륜(성물)</a></li>
+<li><a href="#%E9%9D%92%E5%AE%9D%E5%A5%97%E8%A3%85%EC%B2%AD%EB%B3%B4">青宝套装/청보</a></li>
+<li><a href="#%E9%BB%91%E6%9C%AF%E5%A5%97%E8%A3%85%ED%9D%91%EC%88%A0">黑术套装/흑술</a></li>
+<li><a href="#%E9%9C%B8%E7%8E%89%E5%A5%97%E8%A3%85%ED%8C%A8%EC%98%A5">霸玉套装/패옥</a></li>
+<li><a href="#%E5%A4%A9%E9%BE%99%E5%A5%97%E8%A3%85%EC%B2%9C%EB%A3%A1">天龙套装/천룡</a></li>
+<li><a href="#%E7%88%86%E5%8E%8B%E5%A5%97%E8%A3%85%ED%8F%AD%EC%95%95">爆压套装/폭압</a></li>
+<li><a href="#%E7%9B%91%E8%A7%86%E8%80%85%E5%A5%97%E8%A3%85%EA%B0%90%EC%8B%9C%EC%9E%90">监视者套装/감시자</a></li>
+<li><a href="#%E8%A1%80%E9%BE%99%E5%A5%97%E8%A3%85%ED%98%88%EB%A3%A1">血龙套装/혈룡</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h1><a id="%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>基本操作</h1>
+<h2><a id="%E6%B8%B8%E6%88%8F%E5%BF%AB%E6%8D%B7%E9%94%AE" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>游戏快捷键</h2>
+<table border="0" width="598" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td><img src="http://file2.web.mironline.co.kr/mir2/201305/41408z0288888889.jpg" alt="" /> <br /><br />
+<p><strong>- 조작키</strong></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th width="20%">단축키</th>
+<th width="80%">설명</th>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>
+<div>자동 달리기 켜기/끄기</div>
+</td>
+</tr>
+<tr>
+<td><strong>Ctrl + H</strong></td>
+<td>
+<p>공격모드 전환키</p>
+<p>(모두공격/평화공격/그룹공격/문파공격/선악공격/적대문파공격)</p>
+</td>
+</tr>
+<tr>
+<td><strong>Ctrl + A</strong></td>
+<td>
+<div>소환몹 휴식/공격(호위병/소환몹 뿐/영웅 포함)</div>
+</td>
+</tr>
+<tr>
+<td><strong>Space</strong></td>
+<td>
+<div>탈 것 타고 내리기</div>
+</td>
+</tr>
+<tr>
+<td><strong>F12</strong></td>
+<td>
+<div>키설정</div>
+</td>
+</tr>
+<tr>
+<td><strong>V</strong></td>
+<td>
+<div>미니맵 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>
+<div>필드 맵 보기</div>
+</td>
+</tr>
+<tr>
+<td><strong>H</strong></td>
+<td>
+<div>도움말 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>O</strong></td>
+<td>
+<div>OPTION 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>Ctrl + F</strong></td>
+<td>
+<div>폰트 변경</div>
+</td>
+</tr>
+<tr>
+<td><strong>U</strong></td>
+<td>
+<div>월령의 그리기 방식 변경</div>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>- 벨트 </strong></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th width="20%">단축키</th>
+<th width="80%">설명</th>
+</tr>
+<tr>
+<td><strong>Z</strong></td>
+<td>
+<div>벨트 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>1~6</strong></td>
+<td>
+<p>벨트 창 1번~6번 아이템 사용</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>-무공 단축키 </strong></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th width="20%">단축키</th>
+<th width="80%">설명</th>
+</tr>
+<tr>
+<td><strong>`(~)</strong></td>
+<td>
+<div>무공바 체인지</div>
+</td>
+</tr>
+<tr>
+<td><strong>R</strong></td>
+<td>
+<p>무공바 단축키 창 보기</p>
+</td>
+</tr>
+<tr>
+<td><strong>F1~F8</strong></td>
+<td>
+<p>무공단축키 1번~8번칸</p>
+</td>
+</tr>
+<tr>
+<td><strong>Ctrl + F1~F8</strong></td>
+<td>
+<p>무공단축키 2번바 1번~8번칸</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>- 캐릭터</strong></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th width="20%">단축키</th>
+<th width="80%">설명</th>
+</tr>
+<tr>
+<td><strong>I</strong></td>
+<td>
+<div>인벤토리 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>
+<div>캐릭터 상태 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>Q</strong></td>
+<td>
+<div>퀘스트 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>S</strong></td>
+<td>
+<div>무공바 단축키 창 보기</div>
+</td>
+</tr>
+<tr>
+<td><strong>J</strong></td>
+<td>
+<div>탈 것 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>N</strong></td>
+<td>
+<div>낚시 창 열기/닫기</div>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>- 채팅 </strong></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th width="20%">단축키</th>
+<th width="80%">설명</th>
+</tr>
+<tr>
+<td><strong>/</strong></td>
+<td>
+<div>귓속말</div>
+</td>
+</tr>
+<tr>
+<td><strong>,</strong></td>
+<td>
+<div>연인 귓속말</div>
+</td>
+</tr>
+<tr>
+<td><strong>\</strong></td>
+<td>
+<div>사제 채팅</div>
+</td>
+</tr>
+<tr>
+<td><strong>PageUp</strong></td>
+<td>
+<div>채팅스크롤 페이지 업</div>
+</td>
+</tr>
+<tr>
+<td><strong>PageDown</strong></td>
+<td>
+<div>채팅스크롤 페이지 다운</div>
+</td>
+</tr>
+<tr>
+<td><strong>Up</strong></td>
+<td>
+<div>채팅스크롤 업</div>
+</td>
+</tr>
+<tr>
+<td><strong>Down</strong></td>
+<td>
+<div>채팅스크롤 다운</div>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>- 커뮤니티 </strong></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th width="20%">단축키</th>
+<th width="80%">설명</th>
+</tr>
+<tr>
+<td><strong>Y</strong></td>
+<td>
+<div>유료 아이템 상점 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>T</strong></td>
+<td>
+<div>교환 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>P</strong></td>
+<td>
+<div>그룹 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>G</strong></td>
+<td>
+<div>문파 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>W</strong></td>
+<td>
+<div>친구등록 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>L</strong></td>
+<td>
+<div>교제 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>F</strong></td>
+<td>
+<div>사제 창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>K</strong></td>
+<td>
+<div>대여창 열기/닫기</div>
+</td>
+</tr>
+<tr>
+<td><strong>M</strong></td>
+<td>
+<div>메시지 창 열기/닫기</div>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>- 채팅 매크로 </strong></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th width="20%">단축키</th>
+<th width="80%">설명</th>
+</tr>
+<tr>
+<td><strong>F11</strong></td>
+<td>
+<div>채팅 매크로 보기</div>
+</td>
+</tr>
+<tr>
+<td><strong>Alt + F1~F8</strong></td>
+<td>
+<div>채팅 매크로 1~8</div>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>- 영웅 </strong></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th width="20%">단축키</th>
+<th width="80%">설명</th>
+</tr>
+<tr>
+<td width="151">
+<p><strong>Ctrl + I</strong></p>
+</td>
+<td width="491">
+<p>영웅 가방 창</p>
+</td>
+</tr>
+<tr>
+<td width="151">
+<p><strong>Ctrl + C</strong></p>
+</td>
+<td width="491">
+<p>영웅 캐릭터 창</p>
+</td>
+</tr>
+<tr>
+<td width="151">
+<p><strong>Ctrl + S</strong></p>
+</td>
+<td width="491">
+<p>영웅 무공 창</p>
+</td>
+</tr>
+<tr>
+<td width="151">
+<p><strong>7~8</strong></p>
+</td>
+<td width="491">
+<p>영웅 벨트창 1,2번칸 사용</p>
+</td>
+</tr>
+<tr>
+<td width="151">
+<p><strong>Shift + F1~F7</strong></p>
+</td>
+<td width="491">
+<p>영웅 무공 단축키 1~7번칸</p>
+</td>
+</tr>
+<tr>
+<td width="151">
+<p><strong>Ctrl + 1</strong></p>
+</td>
+<td width="491">
+<p>영웅 수호</p>
+</td>
+</tr>
+<tr>
+<td width="151">
+<p><strong>Ctrl + 2</strong></p>
+</td>
+<td width="491">
+<p>영웅 퇴각</p>
+</td>
+</tr>
+<tr>
+<td width="151">
+<p><strong>Ctrl + 3</strong></p>
+</td>
+<td width="491">
+<p>영웅 소환</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>- 종료</strong></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th width="20%">단축키</th>
+<th width="80%">설명</th>
+</tr>
+<tr>
+<td width="151">
+<p><strong>Alt + X</strong></p>
+</td>
+<td width="491">
+<p>로그아웃</p>
+</td>
+</tr>
+<tr>
+<td width="151">
+<p><strong>Alt + Q</strong></p>
+</td>
+<td width="491">
+<p>게임종료</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>- 영물 </strong></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th width="20%">단축키</th>
+<th width="80%">설명</th>
+</tr>
+<tr>
+<td>
+<p><strong>E</strong></p>
+</td>
+<td>
+<p>영물 창 열기/닫기</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>A</strong></p>
+</td>
+<td>
+<p>영물 아이템 줍기</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>- 기타</strong></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th width="30%">단축키</th>
+<th width="70%">설명</th>
+</tr>
+<tr>
+<td>
+<p><strong>Ctrl + </strong><strong>마우스 우클릭 </strong></p>
+</td>
+<td>
+<p>상대방 정보 보기</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Shift + </strong><strong>마우스 좌클릭 </strong></p>
+</td>
+<td>
+<p>상대방 강제 공격</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Tab</strong></p>
+</td>
+<td>
+<p>아이템 줍기</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>Pause</strong></p>
+</td>
+<td>
+<p>스크린샷 화면 저장</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="%E9%BC%A0%E6%A0%87" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>鼠标</h2>
+<table border="0" width="598" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td><img src="http://file2.web.mironline.co.kr/mir2/201305/41408z0356481482.jpg" alt="" /> <br /><br />
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th width="20%"><strong>왼쪽</strong></th>
+<td bgcolor="#e3e2d7" width="30%"><img src="http://file2.web.mironline.co.kr/mir2/201305/41408z0366898148.jpg" alt="" /></td>
+<td width="50%">
+<p>걷기, 공격하기, 물건 옮기기 기본적인 행동을 수행합니다.</p>
+</td>
+</tr>
+<tr>
+<th><strong>오른쪽</strong></th>
+<td bgcolor="#e3e2d7"><img src="http://file2.web.mironline.co.kr/mir2/201305/41408z0368171296.jpg" alt="" /></td>
+<td>
+<p>가까이에 클릭했을 때에는 방향전환, 먼 곳에 클릭하면 달리기를 합니다.</p>
+</td>
+</tr>
+<tr>
+<th><strong>Shift + </strong><strong>왼쪽</strong></th>
+<td bgcolor="#e3e2d7"><img src="http://file2.web.mironline.co.kr/mir2/201305/41408z0370833333.jpg" alt="" /></td>
+<td>
+<p>강제 공격을 하게 됩니다.</p>
+</td>
+</tr>
+<tr>
+<th><strong>Ctrl + </strong><strong>왼쪽</strong></th>
+<td bgcolor="#e3e2d7"><img src="http://file2.web.mironline.co.kr/mir2/201305/41408z0372800926.jpg" alt="" /></td>
+<td>
+<p>달리기를 할 수 있습니다.</p>
+</td>
+</tr>
+<tr>
+<th><strong>Ctrl + </strong><strong>오른쪽</strong></th>
+<td bgcolor="#e3e2d7"><img src="http://file2.web.mironline.co.kr/mir2/201305/41408z0375.jpg" alt="" /></td>
+<td>
+<p>상대편의 정보를 볼 수 있습니다.<br />F10을 누른 것과 같은 상태가 보여집니다.</p>
+</td>
+</tr>
+<tr>
+<th><strong>Alt + </strong><strong>왼쪽</strong></th>
+<td bgcolor="#e3e2d7"><img src="http://file2.web.mironline.co.kr/mir2/201305/41408z0376736111.jpg" alt="" /></td>
+<td>
+<p>죽은 사슴에 대고 사용하면 고기덩어리를 구할 수 있습니다.</p>
+</td>
+</tr>
+<tr>
+<th><strong>더블클릭</strong></th>
+<td bgcolor="#e3e2d7"><img src="http://file2.web.mironline.co.kr/mir2/201305/41408z0378240741.jpg" alt="" /></td>
+<td>
+<p>땅에 떨어진 아이템 위에 사용하면 아이템을 주울 수 있습니다.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="%E5%91%BD%E4%BB%A4" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>命令</h2>
+<table border="0" cellspacing="0" cellpadding="0" width="598">
+<tbody>
+<tr>
+<td>
+<table class="tbl_guide" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<td width="20%"><strong>/캐릭터</strong></td>
+<td width="80%">
+<p align="left">해당 캐릭터 사용자에게 귓속말을 할 수 있습니다.</p></td></tr>
+<tr>
+<td><strong>!내용</strong></td>
+<td>
+<p align="left">같은 맵 상에 있는 사람들이 볼 수 있도록 외치기를 할 수 있습니다.</p></td></tr>
+<tr>
+<td><strong>♡내용</strong></td>
+<td>
+<p align="left">연인과 대화를 할 수 있습니다.</p></td></tr>
+<tr>
+<td><strong>!!내용</strong></td>
+<td>
+<p align="left">같은 그룹원끼리 대화 시 사용합니다.</p></td></tr>
+<tr>
+<td><strong>!~내용</strong></td>
+<td>
+<p align="left">같은 문파의 문원끼리 대화 시 사용합니다.</p></td></tr>
+<tr>
+<td><strong>@귓속말거부<br>@귀엣말거부</strong></td>
+<td>
+<p align="left">모든 귓속말 거부, 자신이 보내는 귓속말은 가능합니다.</p></td></tr>
+<tr>
+<td><strong>@귓속말허용<br>@귀엣말허용</strong></td>
+<td>
+<p align="left">모든 귓속말 허용 </p></td></tr>
+<tr>
+<td><strong>@차단 캐릭터명</strong></td>
+<td>
+<p align="left">특정인의 귓속말 차단.</p></td></tr>
+<tr>
+<td><strong>@외치기거부<br>@외치기차단 </strong></td>
+<td>
+<p align="left">모든 외치기 안듣기, 같은 메시지를 두번 입력하면 거부 해제 상태로 변경됩니다.</p></td></tr>
+<tr>
+<td><strong>@교환거부 </strong></td>
+<td>
+<p align="left">교환 거부/교환 가능 상태로 교환 상태를 변경합니다.</p></td></tr>
+<tr>
+<td><strong>@문파가입</strong></td>
+<td>
+<p align="left">문파 가입을 허용하거나 허용하지 않는 상태로 변경합니다.</p></td></tr>
+<tr>
+<td><strong>@동맹허용 </strong></td>
+<td>
+<p align="left">동맹을 허용하거나 허용하지 않는 상태로 변경하는 명령어로 문주만이 사용 가능합니다.</p></td></tr>
+<tr>
+<td><strong>@둔갑해제 </strong></td>
+<td>
+<p align="left">둔갑 아이템(탈 등)을 사용한 후 원래 상태로 돌아올 때 사용합니다.</p></td></tr>
+<tr>
+<td><strong>@문파전음차단<br>@문파전음거부 </strong></td>
+<td>
+<p align="left">문파 대화(전음)을 차단하거나 허용하는 상태로 변경합니다.</p></td></tr>
+<tr>
+<td><strong>@내공</strong></td>
+<td>
+<p align="left">내공(50레벨 이상 캐릭터 이펙트)을 보이게 하거나 보이지 않게 합니다.</p></td></tr>
+<tr>
+<td><strong>@공격방식</strong> 
+<p></p></td>
+<td>
+<p align="left">공격방식을 전환합니다. (Ctrl + H)와 같은 기능 </p></td></tr>
+<tr>
+<td><strong>@휴식</strong></td>
+<td>
+<p align="left">소환수의 휴식/공격 모드를 전환합니다. (Ctrl + A)와 같은 기능 </p></td></tr>
+<tr>
+<td><strong>@이동 X Y</strong></td>
+<td>
+<p align="left">순간이동 반지를 끼고 있을 경우 @이동 좌표를 입력하면 원하는 위치로 이동이 가능합니다.</p></td></tr>
+<tr>
+<td><strong>@탐색 캐릭터명</strong></td>
+<td>
+<p align="left">탐색의목걸이를 끼고 특정 캐릭터의 좌표를 검색할 수 있습니다.</p></td></tr>
+<tr>
+<td><strong>@천지합일허용<br>@천지합일거부</strong></td>
+<td>
+<p align="left">천지합일 소환을 허용하거나 허용하지 않는 상태로 변경합니다.</p></td></tr>
+<tr>
+<td><strong>@소환허용<br>@소환거부 </strong>
+<p></p></td>
+<td>
+<p align="left">문파장원으로 소환을 허용하거나 허용하지 않는 상태로 변경합니다.</p></td></tr>
+<tr>
+<td><strong>@천지합일 </strong></td>
+<td>
+<p align="left">천지합일 세트 아이템을 착용하였을 경우 천지합일을 통한 소환이 가능합니다.</p></td></tr>
+<tr>
+<td><strong>@만남 </strong></td>
+<td>
+<p align="left">연인퀘스트를 완료하여 커플반지를 착용하고 있을 경우 연인 소환이 가능합니다.</p></td></tr></tbody></table></td></tr></tbody></table>
+<h1><a id="%E6%B8%B8%E6%88%8F%E7%B3%BB%E7%BB%9F" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>游戏系统</h1>
+<h2><a id="%E7%81%B5%E7%89%A9" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>灵物</h2>
+<p>사람에게 해를 끼치지 않는 순한 생물로 영리한 영물은 사냥 후 땅에 떨어진 물건을 주인에게 가져다 주기도 합니다.</p>
+<p><strong>▪ 영물이란?</strong><br />사람에게 해를 끼치지 않는 순한 생물로 영리한 영물은 사냥 후 땅에 떨어진 물건을 주인에게 가져다 주기도 합니다.<br /><br /><strong>(1) 영물 획득 방법<br /></strong><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5090509259.png" alt="" /><br />영물은 사냥 또는 영물알이나 영물환을 구입하여 가방창에서 영물알을 클릭하면 얻을 수 있습니다.<br />얻은 영물은 영물창에서 확인할 수 있습니다.</p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th colspan="2" width="30%">NPC</th>
+<th>기본정보</th>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5092708333.png" alt="" /></td>
+<td>영물관리자</td>
+<td>
+<p>위치 - 비천현 301:283<br />(영물)아기돼지알과 영로환을 파는 상인 NPC 입니다.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th colspan="2" width="30%">아이템</th>
+<th>기본정보</th>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5094675926.jpg" alt="" /></td>
+<td>영물알</td>
+<td>
+<p>영물알 : 예 - (영물)아기돼지알, (영물)아기괭이알 <br />알을 클릭하면 영물이 나옵니다. 영물에 따라 알의 색상이 다를 수 있습니다. <br />* 아이템 주의사항<br />- 제련, 보옥, 수리, 대여, 영웅사용 불가능 <br />- 교환, 공용창고 보관, 창고 보관 가능</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>(2) 영물의 종류</strong></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th colspan="2" width="25%">영물</th>
+<th width="8%">기한</th>
+<th>기본정보</th>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5096180556.jpg" alt="" /></td>
+<td>아기돼지</td>
+<td>영구</td>
+<td>
+<p>몬스터가 드랍하는 일반 영물알에서 태어나며, 영물관리사에게 밀돈 55만전에 구입 가능합니다. <br />반자동줍기 3*3 (포만감 71이상일 때 가능), 마우스 줍기는 지원하지 않습니다.</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5098032407.jpg" alt="" /></td>
+<td>아기괭이</td>
+<td>영구</td>
+<td>
+<p>몬스터가 드랍하는 일반 영물알에서 태어납니다.<br />반자동줍기 3*3 (포만감 71이상일 때 가능), 마우스 줍기는 지원하지 않습니다.</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5099305556.jpg" alt="" /></td>
+<td>위맨<br />(이벤트)</td>
+<td>기한제<br />영구</td>
+<td>
+<p>기한제 - 자동/반자동 줍기 5*5, 마우스 줍기 7*7 <br />영구 &ndash; 반자동 줍기 5*5, 마우스 줍기는 지원하지 않습니다.(환먹이 필요)</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5100578704.jpg" alt="" /></td>
+<td>병아리<br />(특수)</td>
+<td>기한제</td>
+<td>
+<p>환상점에서 구입할 수 있는 특수 영물입니다.<br />자동/반자동 줍기 7*7, 마우스줍기 11*11 (포만감 1이상 가능)</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5102430556.jpg" alt="" /></td>
+<td>해골두사<br />(특수)</td>
+<td>기한제</td>
+<td>
+<p>환상점에서 구입할 수 있는 특수 영물입니다.<br />자동/반자동 줍기 7*7, 마우스 줍기 11*11 (포만감 1이상 가능)</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5103935185.jpg" alt="" /></td>
+<td>백돈<br />(특수)</td>
+<td>기한제</td>
+<td>
+<p>환상점에서 구입할 수 있는 특수 영물입니다.<br />자동/반자동 줍기 7*7, 마우스 줍기 11*11(포만감 1이상 가능)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>(3) 영물 돌보기</strong><br />영물을 돌보기 위해서는 영물창을 열어야 합니다.<br />영물창은 메뉴&gt;영물창 클릭 또는 단축키 &lsquo;E&rsquo;를 눌러 열 수 있습니다.<br /><br /><strong>▪ 인터페이스<br /></strong><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5106018518.jpg" alt="" /><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5107175926.jpg" alt="" /><br /><br /></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th width="5%">1</th>
+<td width="95%">
+<p>영물은 처음 기본 이름을 가지며 최초 한번 이름바꾸기 버튼을 눌러 이름을 바꿀 수 있습니다. <br />최초 1회 변경 이후에는 영물거울을 사용해야만 이름 변경이 가능합니다.</p>
+</td>
+</tr>
+<tr>
+<th>2</th>
+<td>
+<p>영물은 수명과 같은 기한이 있어 기한을 확인할 수 있습니다.</p>
+</td>
+</tr>
+<tr>
+<th>3</th>
+<td>
+<p>일정시간이 지날때마다 영물의 포만감은 감소되며, 영물 먹이를 주어서 포만감을 올릴 수 있습니다. <br />영물 먹이는 가방창에서 클릭을 통해 먹일 수 있습니다. <br />위 화살표는 영물이 아이템을 줍기 위해 필요한 최소 포만감이며, 한계를 넘어야 아이템을 주워줍니다. <br />아래 화살표는 먹이 한계를 나타내며, 특수한 먹이를 먹지 않으면 이 한계를 넘을 수 없습니다.</p>
+</td>
+</tr>
+<tr>
+<th>4</th>
+<td>
+<p>현재 영물의 능력을 확인 할 수 있습니다.</p>
+</td>
+</tr>
+<tr>
+<th>5</th>
+<td>
+<p>아래 영물 아이콘에서 영물을 선택해 소환하기 버튼을 누르면 영물이 소환됩니다. <br />소환된 이후 소환하기 버튼은 소환해제 버튼으로 변경됩니다. <br />놓아주기 버튼은 누를 경우 해당 영물이 기한과 상관없이 사라지니 신중히 선택하시기 바랍니다.</p>
+</td>
+</tr>
+<tr>
+<th>6</th>
+<td>
+<p>아이템 줍기는 영물에 따라 반자동줍기/ 자동줍기와 마우스 줍기가 가능합니다. <br />반자동 줍기는 A키를 눌러 영물 능력치 범위안의 아이템을 모두 줍는 기능입니다. <br />자동 줍기는 키를 누르지 않아도 영물 능력치 범위안의 아이템을 모두 주워주는 기능입니다. <br />마우스 줍기는 X키를 누른상태에서 마우스를 갖다대고 원하는 아이템을 클릭하면 해당아이템을 주울 수 있습니다. <br />일반줍기보다 아이템을 주울 수 있는 영역이 넓습니다.(줍기 선택 시 7번 창이 열립니다)</p>
+</td>
+</tr>
+<tr>
+<th>7</th>
+<td>
+<p>선택된 종류의 아이템만 영물이 주울 수 있게 해 줍니다. <br />반드시 저장 버튼을 눌러야 선택하신 사항이 저장됩니다.</p>
+</td>
+</tr>
+<tr>
+<th>8</th>
+<td>
+<p>자동/반자동 줍기 기능이 모두 있는 영물의 경우, 키를 누를때 마다 자동줍기 기능/반자동 줍기기능으로 변경할 수 있습니다.</p>
+</td>
+</tr>
+<tr>
+<th>9</th>
+<td>
+<p>흑옥 생산이 가능한 영물의 경우 흑옥 생산바가 표기되며, 이 바가 모두 차면 영물이 흑옥을 생산합니다. <br />생산된 흑옥은 가방으로 자동으로 들어가며, 가방이 가득 차 있을 경우 흑옥이 생산되지 않습니다. <br />흑옥은 영물을 소환하고 있어야 생산이 가능합니다.</p>
+</td>
+</tr>
+<tr>
+<th>10</th>
+<td>
+<p>소환된 영물이 흘린 눈물은 진주가되며 이 진주는 영물진주 상인을 통하여 영약이나 바랑을 랜덤하게 받을 수 있는 강화상자 또는 영물의축복류 아이템으로 교환할 수 있습니다.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<strong><br />▪ 영물의 먹이</strong><br />
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th colspan="2">아이템</th>
+<th>기본정보</th>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5111111111.jpg" alt="" /></td>
+<td>붉은 수초</td>
+<td>
+<p>영물의 포만감 50 올려줍니다. 낚시로 얻습니다. 고갈비의 재료로 쓰입니다.</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5112962963.png" alt="" /></td>
+<td>여물 조개</td>
+<td>
+<p>영물의 포만감을 50 올려줍니다. 낚시로 얻습니다.</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5114351852.jpg" alt="" /></td>
+<td>고갈비</td>
+<td>
+<p>영물의 포만감을 최고로 올려줍니다. '조리법: 고갈비'로 조리할 수 있습니다.</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5115625.png" alt="" /></td>
+<td>포만의 버찌</td>
+<td>
+<p>영물의 포만감을 최고로 올려줍니다. 환으로 구매할 수 있습니다.</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5116782407.png" alt="" /></td>
+<td>영로환</td>
+<td>
+<p>포만감 0이 되어 비활성화된 영물을 활성화시켜 줍니다.<br />'영물관리인'에게서 구입할 수 있습니다.</p>
+</td>
+</tr>
+</tbody>
+</table>
+* 주의사항 : 제련, 보옥, 수리, 대여, 영웅사용 불가능 / 교환, 공용창고 보관, 창고 보관 가능합니다.<br /><br /><strong>▪ 영물 아이템</strong><br />
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th colspan="2" width="30%">아이템</th>
+<th>기본정보</th>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5118634259.png" alt="" /></td>
+<td>영물거울</td>
+<td>
+<p>영물 이름을 바꿔주는 환 아이템입니다. <br />아이템을 클릭하면 영물창에 '이름바꾸기' 버튼이 생성되어 이름을 바꿀 수 있습니다.</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z512025463.png" alt="" /></td>
+<td>영물뻥과자</td>
+<td>
+<p>영물의 포만감을 유지시켜주는 환 아이템 입니다. <br />아이템을 클릭하면 10시간동안 포만감이 떨어지지 않습니다.</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5121412037.png" alt="" /></td>
+<td>흑옥</td>
+<td>
+<p>특수영물이 3시간에 한번씩 생산하는 아이템입니다. <br />아이템을 클릭하면 아이템이 랜덤 드랍됩니다. <br />(체력강장제/마력강장제/선화수/선화제/경험치영물떡/딸기솜사탕/무신의기름/축복의기름 등이며 경험치영물떡은 클릭시 경험치를 주는 아이템 입니다. )<br />* 아이템 주의사항 : 제련, 보옥, 수리, 위탁, 거래, 대여, 영웅이동, 공용창고 보관 불가능/창고 보관 가능</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>(4) 영물 진주의 획득과 사용</strong><br />영물진주는 소환된 특수 영물이 흘린 눈물로 만들어지는 진주입니다. 소환해제시에는 진주가 만들어지지 않습니다.<br />환영물이 소환되어 있거나, 몬스터 사냥을 할 경우 진주를 받을 수 있습니다.<br />(몬스터의 레벨이 유저의 레벨보다 5레벨이 낮을 경우 진주는 나오지 않습니다)<br />영물진주의 갯수는 영물창에서 확인하실 수 있으며 영물진주 상인을 통하여 강화상자나 아이템으로 교환할 수 있습니다.</p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th colspan="2" width="33%">NPC</th>
+<th>기본정보</th>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5123958333.png" alt="" /></td>
+<td>영물진주상인</td>
+<td>
+<p>위치 - 비천현 304:280<br />영물진주를 받고 강화상자와 아이템을 파는 상인NPC입니다.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th colspan="2" width="38%">아이템</th>
+<th>기본정보</th>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5125578704.png" alt="" /></td>
+<td>강화상자</td>
+<td>
+<p>강화상자 (하급/중급/상급) <br />사용시 강화사용효과가 랜덤하게 제공됩니다.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>▪ 강화상자 이용 효과</strong><br />- 환영물이 소환되어 있어야 효과가 유지됩니다.<br />- 다른 버프와 중복됩니다.<br />- 강화상자의 등급에 따라 다른 능력치가 적용됩니다.</p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th colspan="2" width="30%">아이템</th>
+<th>기본정보</th>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5128125.jpg" alt="" /></td>
+<td>수행의영약</td>
+<td>
+<p>(하) 경험치 5% 추가 획득, 버프 1시간<br />(중) 경험치 10% 추가 획득, 버프 1시간<br />(상) 경험치 20% 추가 획득, 버프 1시간</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5129513889.jpg" alt="" /></td>
+<td>혜안의영약</td>
+<td>
+<p>(하) 드롭율 10%, 버프 1시간<br />(중) 드롭율 20%, 버프 1시간<br />(상) 드롭율 50%, 버프 1시간</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5130902778.jpg" alt="" /></td>
+<td>육체의영약</td>
+<td>
+<p>(하) MAX HP +50, 버프 1시간<br />(중) MAX HP +100, 버프 1시간<br />(상) MAX HP +200, 버프 1시간</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5132638889.jpg" alt="" /></td>
+<td>정신의영약</td>
+<td>
+<p>(하) MAX MP +50, 버프 1시간<br />(중) MAX MP +100, 버프 1시간<br />(상) MAX MP +200, 버프 1시간</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5134027778.jpg" alt="" /></td>
+<td>방패의영약</td>
+<td>
+<p>(하) 방어력 1-1 증가, 버프 1시간<br />(중) 방어력 3-3 증가, 버프 1시간<br />(상) 방어력 5-5 증가, 버프 1시간</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5135416667.jpg" alt="" /></td>
+<td>초인의영약</td>
+<td>
+<p>(하) 마법방어력 1-1 증가, 버프 1시간<br />(중) 마법방어력 3-3 증가, 버프 1시간<br />(상) 마법방어력 5-5 증가, 버프 1시간</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5136574074.jpg" alt="" /></td>
+<td>질주의영약</td>
+<td>
+<p>(하) 질주 효과 30분<br />(중) 질주 효과 1시간<br />(상) 질주 효과 1시간 30분</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5138425926.jpg" alt="" /></td>
+<td>깨끗한바랑</td>
+<td>
+<p>(하) 가방무게 +3, 버프 5시간<br />(중) 가방무게 +5, 버프 5시간<br />(상) 가방무게 +9, 버프 5시간</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br />
+<p><strong>▪ 영물진주상인에게서 구입할 수 있는 강화 효과</strong></p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<th colspan="2" width="35%">아이템</th>
+<th>기본정보</th>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5140509259.jpg" alt="" /></td>
+<td>영물의축복무적</td>
+<td>
+<p>5초 동안 무적, 대미지 및 상태이상 모두 무적, 2시간에 1회만 사용할 수 있습니다.</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5141550926.jpg" alt="" /></td>
+<td>영물의축복행운</td>
+<td>
+<p>5분 동안 행운 +9, 3시간에 1회만 사용할 수 있습니다.</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5142708333.jpg" alt="" /></td>
+<td>영물의축복공력</td>
+<td>
+<p>5분 동안 공력 +50, 3시간에 1회만 사용할 수 있습니다.</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z514375.jpg" alt="" /></td>
+<td>영물의축복체력회복</td>
+<td>
+<p>5분 동안 체력회복 +200%, 1시간에 1회만 사용할 수 있습니다.</p>
+</td>
+</tr>
+<tr>
+<td bgcolor="#000000"><img src="http://file2.web.mironline.co.kr/mir2/201306/41444z5144791667.jpg" alt="" /></td>
+<td>영물의축복마력회복</td>
+<td>
+<p>5분 동안 마력회복 +200%, 1시간에 1회만 사용할 수 있습니다.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h1><a id="%E8%A3%85%E5%A4%87%E5%A5%97%E8%A3%85" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>装备-套装</h1>
+<h2><a id="%E6%98%86%E4%BB%91%E8%A3%85%E5%A4%87%E7%A5%9E%E7%89%A9%EA%B3%A4%EB%A5%9C%EC%8B%A0%EB%AC%BC" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>昆仑装备(神物)/곤륜(신물)</h2>
+<p>♣ 승천의 기회를 얻은 천존급 선인과 오랜 시간 수련을 거친 무림종사들만이<br />
+짙은 천무를 뚫고 만져볼 수 있었던 곤륜의 정상, 곤륜의 무구입니다.<br />
+♣ 곤륜세트는 제작비서를 사용해 해당하는 재료아이템들을 소모하여 제작할 수 있습니다.<br />
+ex) 곤륜파사갑(신물) 제작 : 곤륜파사갑(신물)제작비서를 사용해<br />
+해당하는 재료아이템(곤륜파사갑(성물), 무림종사의인장 100개, 빙룡의용린,<br />
+고대숨결깃든복원재료)이 충족될 경우 제작 가능합니다.</p>
+<ul>
+<li>모든 제작은 실패할 수 있으며, 실패시 빙룡의 숨결을 사용하여<br />
+제작서를 제외한 재료아이템들을 복원할 수 있습니다.</li>
+<li>제작비서는 제작으로 획득 가능하며, 하위 제작서와 재료 아이템이 필요합니다.</li>
+<li>일부 제작서는 보스몬스터에게서, 일부 제작서는 일반 몬스터에게 획득할 수 있습니다.</li>
+<li>빙룡의 숨결은 삼청도량 밀실 NPC 유황에게 빙룡무기를 분해시 획득할 수 있습니다.</li>
+</ul>
+<p>♣ 다음 세트 아이템을 착용할 경우 추가 능력치가 부여되며, 착용 시 직업에 따라 능력치가 변합니다.</p>
+<table border="0" width="100%" cellspacing="0" cellpadding="0"><colgroup> <col span="3" width="18" /> <col span="8" width="18" /> <col width="18" /> <col span="13" width="15" /> <col width="14" /> <col width="4" /> <col width="15" /> <col width="4" /> <col width="67" /> </colgroup>
+<tbody>
+<tr>
+<td colspan="3" width="60" height="40">
+<p><strong>반지</strong></p>
+</td>
+<td colspan="3" width="60">
+<p><strong>목걸이</strong></p>
+</td>
+<td colspan="3" width="60">
+<p><strong>팔찌</strong></p>
+</td>
+<td colspan="3" width="60">
+<p><strong>갑주</strong></p>
+</td>
+<td colspan="18" width="299">
+<p><strong>세트 효과</strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="3" height="40">
+<p>●</p>
+</td>
+<td colspan="3">
+<p>●</p>
+</td>
+<td colspan="3">
+<p>　</p>
+</td>
+<td colspan="3">
+<p>　</p>
+</td>
+<td colspan="18">
+<p>파괴/마력/도력 +0~8</p>
+</td>
+</tr>
+<tr>
+<td colspan="3" height="40">
+<p>●</p>
+</td>
+<td colspan="3">
+<p>●</p>
+</td>
+<td colspan="3">
+<p>●</p>
+</td>
+<td colspan="3">
+<p>●</p>
+</td>
+<td colspan="18">
+<p>발동형 특수 효과 : 방어 시 20%의 확률로 받는 데미지가15초 동안 20% 감소합니다.(쿨타임 120초)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" width="600" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td colspan="2" width="165">
+<p><strong>명칭</strong></p>
+</td>
+<td width="48">
+<p><strong>레벨</strong></p>
+</td>
+<td width="48">
+<p><strong>무게</strong></p>
+</td>
+<td width="48">
+<p><strong>내구</strong></p>
+</td>
+<td width="48">
+<p><strong>파괴</strong></p>
+</td>
+<td width="48">
+<p><strong>마법</strong></p>
+</td>
+<td width="48">
+<p><strong>도력</strong></p>
+</td>
+<td width="59">
+<p><strong>방어</strong></p>
+</td>
+<td width="51">
+<p><strong>마방</strong></p>
+</td>
+<td width="37">
+<p><strong>각성</strong></p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66">
+<p><img src="http://upload.mironline.co.kr/sim/04/20200420175330.BMP" alt="" width="37" height="32" border="0" /></p>
+</td>
+<td rowspan="6" width="99">
+<p><strong>곤륜영옥환</strong></p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>2</p>
+</td>
+<td width="48">
+<p>10</p>
+</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 파괴 4~17, 방어 1~2, 마방 0~2, 공력 0~3, 정확 +1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 :&nbsp;마력 6~13, 방어 0~2, 마방 0~3, 공력 0~3, 정확 +1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 :&nbsp;도력 6~13, 방어 0~2, 마방 0~3, 공력 0~3, 정확 +1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 파괴 5~15, 방어 0~2, 마방 1~2, 공력 0~3, 정확 +1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수 : 파괴 5~15, 마력 3~9, 방어 0~2, 마방 1~2, 공력 0~3, 정확 +1</p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66">
+<p>　<img src="http://upload.mironline.co.kr/sim/04/20200420175410.BMP" alt="" border="0" /></p>
+</td>
+<td rowspan="6" width="99">
+<p><strong>곤륜파사갑</strong></p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>3</p>
+</td>
+<td width="48">
+<p>10</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">&nbsp;</td>
+<td width="51">
+<p>　</p>
+</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 파괴 5~14, 방어 4~6, 공력 0~4, 민첩 +1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 :&nbsp;마력 7~11, 방어 3~6, 공력 0~4, 민첩 +1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 : 도력 7~11, 방어 3~6, 공력 0~4, 민첩 +1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 파괴 7~12, 방어 3~6, 공력 0~4, 민첩 +1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수 : 파괴 6~12, 마력 3~5, 방어 3~6, 공력 0~4, 민첩 +1</p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66">
+<p>　<img src="http://upload.mironline.co.kr/sim/04/20200420175418.BMP" alt="" /></p>
+</td>
+<td rowspan="6" width="99">
+<p><strong>곤륜여선루</strong></p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>2</p>
+</td>
+<td width="48">
+<p>10</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">
+<p>　</p>
+</td>
+<td width="51">
+<p>　</p>
+</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 파괴 6~18, MAX MP +100, 공력 0~5</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 :&nbsp;마력 8~14, MAX MP +200, 공력 0~5</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 : 도력&nbsp;8~14, MAX MP +200, 공력 0~5</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 파괴 9~16, MAX MP +150, 공력 0~5</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수 : 파괴 8~15,&nbsp;마력 3~7,&nbsp;MAX MP +150, 공력 0~5</p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66">
+<p>　<img src="http://upload.mironline.co.kr/sim/04/20200420175442.bmp" alt="" border="0" /><br /><br /> <img src="http://upload.mironline.co.kr/sim/04/20200421111314.bmp" alt="" border="0" /></p>
+</td>
+<td rowspan="6" width="99">
+<p><strong>곤륜용극의</strong></p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>15</p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">&nbsp;</td>
+<td width="51">&nbsp;</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 방어 22~29, 마법방어 7~15, 공력 0~8, 가방무게 +50, 중독회복 +1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 : 방어 17~25, 마법방어 9~17, 공력 0~8, 가방무게 +50, 중독회복 +1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 : 방어 17~25, 마법방어 9~17, 공력 0~8, 가방무게 +50, 중독회복 +1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 방어 19~26, 마법방어 8~16, 공력 0~8, 가방무게 +50, 중독회복 +1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수&nbsp;: 방어 19~26, 마법방어 8~16, 공력 0~8, 가방무게 +50, 중독회복 +1</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="%E6%98%86%E4%BB%91%E8%A3%85%E5%A4%87%E5%9C%A3%E7%89%A9%EA%B3%A4%EB%A5%9C%EC%84%B1%EB%AC%BC" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>昆仑装备(圣物)/곤륜(성물)</h2>
+<p>♣ 승천의 기회를 얻은 천존급 선인과 오랜 시간 수련을 거친 무림종사들만이<br />
+짙은 천무를 뚫고 만져볼 수 있었던 곤륜의 정상, 곤륜의 무구입니다.</p>
+<p>♣ 곤륜세트는 제작비서를 사용해 해당하는 재료아이템들을 소모하여 제작할 수 있습니다.<br />
+ex) 곤륜파사갑(성물) 제작 : 곤륜파사갑(성물)제작비서를 사용해<br />
+해당하는 재료아이템(무림종사의인장 50개, 고대숨결깃든파사갑)이 충족될 경우 제작 가능합니다.</p>
+<ul>
+<li>모든 제작은 실패할 수 있으며, 실패시 빙룡의 숨결을 사용하여<br />
+제작서를 제외한 재료아이템들을 복원할 수 있습니다.</li>
+<li>제작비서는 제작으로 획득 가능하며, 하위 제작서와 재료 아이템이 필요합니다.</li>
+<li>일부 제작서는 보스몬스터에게서, 일부 제작서는 일반 몬스터에게 획득할 수 있습니다.</li>
+<li>빙룡의 숨결은 삼청도량 밀실 NPC 유황에게 빙룡무기를 분해시 획득할 수 있습니다.</li>
+</ul>
+<p>♣ 쌍녹영옥환/쌍화영옥환 모두 착용시 세트 효과가 부여됩니다.</p>
+<table border="0" width="450" cellspacing="0" cellpadding="0"><colgroup> <col span="30" width="15" /> </colgroup>
+<tbody>
+<tr>
+<td colspan="3" width="45" height="46">
+<p><strong>반지1</strong></p>
+</td>
+<td colspan="3" width="45">
+<p><strong>반지2</strong></p>
+</td>
+<td colspan="3" width="45">
+<p><strong>목걸이</strong></p>
+</td>
+<td colspan="3" width="45">
+<p><strong>팔찌</strong></p>
+</td>
+<td colspan="18" width="270">
+<p><strong>세트 효과</strong></p>
+</td>
+</tr>
+<tr>
+<td colspan="3" height="45">
+<p>●</p>
+</td>
+<td colspan="3">
+<p>●</p>
+</td>
+<td colspan="3">
+<p>　</p>
+</td>
+<td colspan="3">
+<p>　</p>
+</td>
+<td colspan="18">
+<p>파괴/마력/도력 +0~5</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" width="600" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td colspan="2" width="165">
+<p><strong>명칭</strong></p>
+</td>
+<td width="48">
+<p><strong>레벨</strong></p>
+</td>
+<td width="48">
+<p><strong>무게</strong></p>
+</td>
+<td width="48">
+<p><strong>내구</strong></p>
+</td>
+<td width="48">
+<p><strong>파괴</strong></p>
+</td>
+<td width="48">
+<p><strong>마법</strong></p>
+</td>
+<td width="48">
+<p><strong>도력</strong></p>
+</td>
+<td width="59">
+<p><strong>방어</strong></p>
+</td>
+<td width="51">
+<p><strong>마방</strong></p>
+</td>
+<td width="37">
+<p><strong>각성</strong></p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66"><img src="http://upload.mironline.co.kr/sim/04/20200420001935.PNG" alt="" border="0" /></td>
+<td rowspan="6" width="99">
+<p><strong>쌍녹영옥환</strong></p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>10</p>
+</td>
+<td width="48">
+<p>7</p>
+</td>
+<td width="37">
+<p>성물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>강화를 통해서 획득하게 되는 녹영옥환의 쌍가락지 형태 <br /><br />전사 : 파괴 3~15</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 :&nbsp;마력 3~12</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 :&nbsp;도력 3~12</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 파괴 1~13</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수 : 파괴 3~13, 마력 2~9, 정확+2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66"><img src="http://upload.mironline.co.kr/sim/04/20200420160109.PNG" alt="" /></td>
+<td rowspan="6" width="99">
+<p><strong>쌍화영옥환</strong></p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>10</p>
+</td>
+<td width="48">
+<p>7</p>
+</td>
+<td width="37">
+<p>성물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>강화를 통해서 획득하게 되는 화영옥환의 쌍가락지 형태<br /><br />전사 : 파괴 2~13, 방어 0~2, 마방 0~2</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 :&nbsp;마력 2~10, 방어 0~2, 마방 0~2</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 :&nbsp;도력 2~10, 방어 0~2, 마방 0~2</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 파괴 0~11, 방어 0~2, 마방 0~2</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수 : 파괴 2~10, 마력 1~7, 정확+3, 방어 0~2, 마방 0~2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66">
+<p>　<img src="http://upload.mironline.co.kr/sim/04/20200420152602.BMP" alt="" border="0" /></p>
+</td>
+<td rowspan="6" width="99">
+<p><strong>곤륜파사갑</strong></p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>3</p>
+</td>
+<td width="48">
+<p>10</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">
+</td>
+<td width="51">
+<p>　</p>
+</td>
+<td width="37">
+<p>성물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 파괴 3~11, 방어3~5, 공력0~2</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 :&nbsp;마력 4~8, 방어2~5, 공력0~2</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 : 도력 4~8, 방어2~5, 공력0~2</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 파괴 5~9, 방어2~5, 공력0~2</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수 : 파괴 4~9, 마력1~4, 방어2~5, 공력0~2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66">
+<p>　<img src="http://upload.mironline.co.kr/sim/04/20200420152641.BMP" alt="" /></p>
+</td>
+<td rowspan="6" width="99">
+<p><strong>곤륜여선루</strong></p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>2</p>
+</td>
+<td width="48">
+<p>10</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">
+<p>　</p>
+</td>
+<td width="51">
+<p>　</p>
+</td>
+<td width="37">
+<p>성물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 파괴 4~13, 공력 0~3</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 :&nbsp;마력 5~10, 공력 0~3</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 : 도력&nbsp;5~10, 공력 0~3</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 파괴 6~11, 공력 0~3</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수 : 파괴 5~10, 공력 0~3</p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66">
+<p>　<img src="http://upload.mironline.co.kr/sim/04/20200421111032.bmp" alt="" border="0" /><br /><br /></p>
+<p> <img src="http://upload.mironline.co.kr/sim/04/20200421111041.bmp" alt="" border="0" /><br /></p>
+</td>
+<td rowspan="6" width="99">
+<p><strong>곤륜용극의</strong></p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>15</p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">
+</td>
+<td width="51">
+</td>
+<td width="37">
+<p>성물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 방어 20~27, 마법방어 5~13, 공력 0~7</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 : 방어 15~23, 마법방어 7~15, 공력 0~7</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 : 방어 15~23, 마법방어 7~15, 공력 0~7</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 방어 17~24, 마법방어 6~14, 공력 0~7</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수&nbsp;: 방어 17~24, 마법방어 6~14, 공력 0~7</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="%E9%9D%92%E5%AE%9D%E5%A5%97%E8%A3%85%EC%B2%AD%EB%B3%B4" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>青宝套装/청보</h2>
+<p>강력한 주마들이 사용한 흔적이 남아있는 아이템으로 착용시 세트효과는 없습니다.</p>
+<table class="tbl_guide" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th width="30%" colspan="2"><strong>명칭</strong></th>
+<th><strong>레벨</strong></th>
+<th><strong>무게</strong></th>
+<th><strong>내구</strong></th>
+<th><strong>파괴</strong></th>
+<th><strong>마법</strong></th>
+<th><strong>도력</strong></th>
+<th><strong>방어</strong></th>
+<th><strong>마방</strong></th>
+<th><strong>각성</strong></th></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6872106481.png"></td>
+<td rowspan="2"><strong>청보관<br>(용맹)</strong> </td>
+<td>60</td>
+<td>32</td>
+<td>20</td>
+<td>1~1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>4~10</td>
+<td>2~3</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">벽혈 전사 전용 아이템, 민첩+1, 각성 불가</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6873263889.png"></td>
+<td rowspan="2"><strong>청보요대<br>(용맹)</strong></td>
+<td>60</td>
+<td>16</td>
+<td>14</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>3~7</td>
+<td>1~3</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">벽혈 전사 전용 아이템, 착용무게+28, 가방무게+100</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6874305556.png"></td>
+<td rowspan="2"><strong>청보화<br>(용맹)</strong> </td>
+<td>60</td>
+<td>16</td>
+<td>14</td>
+<td>1~1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2~6</td>
+<td>1~2</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">벽혈 전사 전용 아이템, 마법저항+1</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" border="0" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6875347222.png"></td>
+<td rowspan="2"><strong>청보관 <br>(마성)</strong></td>
+<td>60</td>
+<td>16</td>
+<td>12</td>
+<td>&nbsp;</td>
+<td>2~3</td>
+<td>&nbsp;</td>
+<td>2~4</td>
+<td>3~6</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">홍현 술사 전용 아이템, 민첩+1</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" border="0" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6877083333.png"></td>
+<td rowspan="2"><strong>청보요대<br>(마성)</strong></td>
+<td>60</td>
+<td>8</td>
+<td>8</td>
+<td>&nbsp;</td>
+<td></td>
+<td>&nbsp;</td>
+<td>2~3</td>
+<td>2~5</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">홍현 술사 전용 아이템, 착용무게+14, 가방무게+40</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" border="0" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6878472222.png"></td>
+<td rowspan="2"><strong>청보화<br>(마성)</strong> </td>
+<td>60</td>
+<td>8</td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>0~2</td>
+<td>&nbsp;</td>
+<td>1~3</td>
+<td>2~4</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">홍현 술사 전용 아이템, 마법저항+1</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" border="0" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6875347222.png"></td>
+<td rowspan="2"><strong>청보관<br>(선계)</strong> </td>
+<td>60</td>
+<td>20</td>
+<td>16</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2~3</td>
+<td>2~6</td>
+<td>3~5</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">익선 도사 전용 아이템, 민첩+1, 각성 불가</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" border="0" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6877083333.png"></td>
+<td rowspan="2"><strong>청보요대<br>(선계)</strong></td>
+<td>60</td>
+<td>10</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2~4</td>
+<td>2~3</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">익선 도사 전용 아이템, 착용무게+18, 가방무게+60, 중독저항+1</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" border="0" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6878472222.png"></td>
+<td rowspan="2"><strong>청보화<br>(선계)</strong> </td>
+<td>60</td>
+<td>10</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>0~2</td>
+<td>1~4</td>
+<td>1~3</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">익선 도사 전용 아이템, 마법저항+1</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" border="0" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6875347222.png"></td>
+<td rowspan="2"><strong>청보관<br>(기민)</strong> </td>
+<td>60</td>
+<td>24</td>
+<td>18</td>
+<td>0~1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>3~8</td>
+<td>3~7</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">비연 자객 전용 아이템, 민첩+2, 각성 불가</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" border="0" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6877083333.png"></td>
+<td rowspan="2"><strong>청보요대<br>(기민)</strong></td>
+<td>60</td>
+<td>13</td>
+<td>12</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2~5</td>
+<td>3~5</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">비연 자객 전용 아이템, 착용무게+22, 가방무게+80, 중독저항+1</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" border="0" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6878472222.png"></td>
+<td rowspan="2"><strong>청보화<br>(기민)</strong> </td>
+<td>60</td>
+<td>13</td>
+<td>12</td>
+<td>0~1</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2~5</td>
+<td>2~4</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">비연 자객 전용 아이템, 마법저항+1</div></td></tr></tbody></table>
+<h2><a id="%E9%BB%91%E6%9C%AF%E5%A5%97%E8%A3%85%ED%9D%91%EC%88%A0" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>黑术套装/흑술</h2>
+<p>편목도 암흑선장의 강력한 힘이 깃든 아이템으로 착용시 세트효과는 없습니다.</p>
+<table class="tbl_guide" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th width="30%" colspan="2"><strong>명칭</strong></th>
+<th><strong>레벨</strong></th>
+<th><strong>무게</strong></th>
+<th><strong>내구</strong></th>
+<th><strong>파괴</strong></th>
+<th><strong>마법</strong></th>
+<th><strong>도력</strong></th>
+<th><strong>방어</strong></th>
+<th><strong>마방</strong></th>
+<th><strong>각성</strong></th></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z7482291667.png"></td>
+<td rowspan="2"><strong>흑술관</strong></td>
+<td>52 
+<p></p></td>
+<td>10 
+<p></p></td>
+<td>14 
+<p></p></td>
+<td>0~1 
+<p></p></td>
+<td>1~3 
+<p></p></td>
+<td>1~3 
+<p></p></td>
+<td>4~8 
+<p></p></td>
+<td>3~5 
+<p></p></td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<p align="left">정확+1, 각성 가능</p></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z7483333333.png"></td>
+<td rowspan="2"><strong>흑술요대</strong></td>
+<td>52</td>
+<td>8</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>3~5</td>
+<td>2~4</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<p align="left">양손무게+6, 착용무게+14</p></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z7484259259.png"></td>
+<td rowspan="2"><strong>흑술장화</strong></td>
+<td>52</td>
+<td>8</td>
+<td>10</td>
+<td>0~1</td>
+<td>0~1</td>
+<td>0~1</td>
+<td>1~3</td>
+<td>1~3</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<p align="left">민첩+1</p></td></tr></tbody></table>
+<h2><a id="%E9%9C%B8%E7%8E%89%E5%A5%97%E8%A3%85%ED%8C%A8%EC%98%A5" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>霸玉套装/패옥</h2>
+<p>편목도에서 몬스터를 사냥하여 얻을 수 있는 반짝이는 조개껍질을 모아서 편목도 내 위치한 의복상인가윤을 통해 원하는 아이템으로 교환 가능합니다. 착용시 세트효과는 없습니다.</p>
+<table class="tbl_guide" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th width="30%" colspan="2"><strong>명칭</strong></th>
+<th><strong>레벨</strong></th>
+<th><strong>무게</strong></th>
+<th><strong>내구</strong></th>
+<th><strong>파괴</strong></th>
+<th><strong>마법</strong></th>
+<th><strong>도력</strong></th>
+<th><strong>방어</strong></th>
+<th><strong>마방</strong></th>
+<th><strong>각성</strong></th></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z7361342593.png"></td>
+<td rowspan="2"><strong>패옥투구</strong></td>
+<td>50</td>
+<td>6</td>
+<td>10</td>
+<td>0~1</td>
+<td>1~3</td>
+<td>1~3</td>
+<td>3~7</td>
+<td>3~4</td>
+<td>보물</td></tr>
+<tr>
+<td colspan="9">
+<p align="left">반짝이는조개껍질 320개로 교환 가능, 각성 가능</p></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z73625.png"></td>
+<td rowspan="2"><strong>패옥요대</strong></td>
+<td>50</td>
+<td>4</td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>2~4</td>
+<td>2~3</td>
+<td>보물</td></tr>
+<tr>
+<td colspan="9">
+<p align="left">양손무게+4, 착용무게+10, 반짝이는조개껍질 250개로 교환 가능</p></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z7363310185.png"></td>
+<td rowspan="2"><strong>패옥장화</strong></td>
+<td>50</td>
+<td>4</td>
+<td>8</td>
+<td>&nbsp;</td>
+<td>0~1</td>
+<td>0~1</td>
+<td>1~2</td>
+<td>1~2</td>
+<td>보물</td></tr>
+<tr>
+<td colspan="9">
+<p align="left">반짝이는조개껍질 200개로 교환 가능</p></td></tr></tbody></table>
+<h2><a id="%E5%A4%A9%E9%BE%99%E5%A5%97%E8%A3%85%EC%B2%9C%EB%A3%A1" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>天龙套装/천룡</h2>
+<p>용의 아이템으로 각각의 세트 아이템을 어떻게 착용하느냐에 따라 추가 능력치가 달라지며, 아이템 착용 시 직업에 따라 능력치가 변합니다.</p>
+<table border="0" width="602" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td>
+<p><br />용의 아이템으로 각각의 세트 아이템을 어떻게 착용하느냐에 따라 추가 능력치가 달라지며, 아이템 착용 시 직업에 따라 능력치가 변합니다.</p>
+<table border="0" width="601" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td nowrap="nowrap" width="40">
+<p><strong>무기</strong></p>
+</td>
+<td nowrap="nowrap" width="43">
+<p><strong>갑옷</strong></p>
+</td>
+<td nowrap="nowrap" width="46">
+<p><strong>투구</strong></p>
+</td>
+<td nowrap="nowrap" width="46">
+<p><strong>신발</strong></p>
+</td>
+<td nowrap="nowrap" width="48">
+<p><strong>벨트</strong></p>
+</td>
+<td nowrap="nowrap" width="59">
+<p><strong>목걸이</strong></p>
+</td>
+<td nowrap="nowrap" width="51">
+<p><strong>팔찌</strong></p>
+</td>
+<td nowrap="nowrap" width="44">
+<p><strong>반지</strong></p>
+</td>
+<td nowrap="nowrap" width="223">
+<p><strong>세트효과</strong></p>
+</td>
+</tr>
+<tr>
+<td nowrap="nowrap" width="40">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="43">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="46">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="46">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="48">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="59">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="51">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="44">
+<p>　</p>
+</td>
+<td width="223">
+<p>발동형 특수 효과: 공격(일반 or 무공) 시 30%의 확률로 데미지가 15초동안 30% 증가합니다.(쿨타임 60초)</p>
+</td>
+</tr>
+<tr>
+<td nowrap="nowrap" width="40">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="43">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="46">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="46">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="48">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="59">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="51">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="44">
+<p>　</p>
+</td>
+<td width="223">
+<p>발동형 특수 효과 : 방어 시 25%의 확률로 받는 데미지가15초 동안 30% 감소합니다.(쿨타임 60초)</p>
+</td>
+</tr>
+<tr>
+<td nowrap="nowrap" width="40">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="43">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="46">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="46">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="48">
+<p>　</p>
+</td>
+<td nowrap="nowrap" width="59">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="51">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="44">
+<p>●</p>
+</td>
+<td width="223">
+<p>파괴/마력/도력 2~6, 공격속도 +2<br />가방무게+60, 착용무게+30, 양손무게+30</p>
+</td>
+</tr>
+<tr>
+<td nowrap="nowrap" width="40">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="43">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="46">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="46">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="48">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="59">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="51">
+<p>●</p>
+</td>
+<td nowrap="nowrap" width="44">
+<p>●</p>
+</td>
+<td width="223">
+<p>방어 2~6, 마방 1~4, 행운+2<br />HP+100, MP+100, 중독회복+2</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" width="600" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td colspan="2" width="165">
+<p><strong>명칭</strong></p>
+</td>
+<td width="48">
+<p><strong>레벨</strong></p>
+</td>
+<td width="48">
+<p><strong>무게</strong></p>
+</td>
+<td width="48">
+<p><strong>내구</strong></p>
+</td>
+<td width="48">
+<p><strong>파괴</strong></p>
+</td>
+<td width="48">
+<p><strong>마법</strong></p>
+</td>
+<td width="48">
+<p><strong>도력</strong></p>
+</td>
+<td width="59">
+<p><strong>방어</strong></p>
+</td>
+<td width="51">
+<p><strong>마방</strong></p>
+</td>
+<td width="37">
+<p><strong>각성</strong></p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66"><img src="http://upload.mironline.co.kr/mir2/11/20161109143256.png" alt="" /></td>
+<td rowspan="6" width="99">
+<p><strong>천룡혼세환</strong></p>
+</td>
+<td width="48">
+<p>20</p>
+</td>
+<td width="48">
+<p>1</p>
+</td>
+<td width="48">
+<p>8</p>
+</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 파괴 4~12, 마방 1~2, 정확+1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 :&nbsp;마력 3~10, 마방 1~2, 정확+1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 :&nbsp;파괴 2~7, 도력 3~10, 마방 1~2, 정확+1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 파괴 4~11, 마방 1~2, 정확+1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수 : 파괴 3~10, 마력 4~8, 마방 1~2, 정확+1</p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66">
+<p>　<img src="http://upload.mironline.co.kr/mir2/11/20161109143317.png" alt="" /></p>
+</td>
+<td rowspan="6" width="99">
+<p><strong>천룡광마륜</strong></p>
+</td>
+<td width="48">
+<p>20</p>
+</td>
+<td width="48">
+<p>1</p>
+</td>
+<td width="48">
+<p>8</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">
+<p>　</p>
+</td>
+<td width="51">
+<p>　</p>
+</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 파괴 6~11, 방어 3~6, 민첩+1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 :&nbsp;마력 5~9, 방어 3~6, 민첩+1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 : 파괴 2~4, 도력 4~9,&nbsp;방어 3~6, 민첩+1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 파괴 5~10, 방어 3~6, 민첩+1</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수 : 파괴 4~9, 마력 3~5, 방어 3~6, 민첩+1</p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66">
+<p>　<img src="http://upload.mironline.co.kr/mir2/11/20161109143323.png" alt="" /></p>
+</td>
+<td rowspan="6" width="99">
+<p><strong>천룡연월신</strong></p>
+</td>
+<td width="48">
+<p>20</p>
+</td>
+<td width="48">
+<p>1</p>
+</td>
+<td width="48">
+<p>9</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">
+<p>　</p>
+</td>
+<td width="51">
+<p>　</p>
+</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 파괴 7~13, 마법저항+8</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 : 마법 5~11, 마법저항+8</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 : 도력 5~11, 마법저항+8</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 파괴 6~12, 마법저항+8</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수 : 파괴 5~10, 마력 3~7, 마법저항+8</p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66">
+<p>　<img src="http://upload.mironline.co.kr/mir2/11/20161109143334.png" alt="" /></p>
+</td>
+<td rowspan="6" width="99">
+<p><strong>천룡불사의</strong></p>
+</td>
+<td width="48">
+<p>20</p>
+</td>
+<td width="48">
+<p>11</p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">
+<p>16~25</p>
+</td>
+<td width="51">
+<p>7~15</p>
+</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 파괴 2~7, 행운+1, 체력회복+20%, 마력회복+20%</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 : 마법 2~9, 행운+1, 체력회복+20%, 마력회복+20%</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 : 도력 2~9, 행운+1, 체력회복+20%, 마력회복+20%</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 파괴 2~7, 행운+1, 체력회복+20%, 마력회복+20%</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수&nbsp;: 파괴 2~4, 마력 1~4, 행운+1, 체력회복+20%, 마력회복+20%</p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66">
+<p>　<img src="http://upload.mironline.co.kr/mir2/11/20161109143344.png" alt="" /></p>
+</td>
+<td rowspan="6" width="99">
+<p><strong>천룡추혼모</strong></p>
+</td>
+<td width="48">
+<p>20</p>
+</td>
+<td width="48">
+<p>2</p>
+</td>
+<td width="48">
+<p>9</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">
+<p>4~9</p>
+</td>
+<td width="51">
+<p>　</p>
+</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 파괴 1~4,&nbsp;방어4~9, 마방 3~6, 중독저항+8</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 :&nbsp;마력 2~3,&nbsp;방어4~9, 마방 3~6, 중독저항+8</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 :&nbsp;도력 2~3,&nbsp;방어4~9, 마방 3~6, 중독저항+8</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 파괴 2~3,&nbsp;방어4~9, 마방 3~6, 중독저항+8</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수 :&nbsp;파괴 1~3, 마력 1~2,&nbsp;방어4~9, 마방 3~6, 중독저항+8</p>
+</td>
+</tr>
+<tr>
+<td rowspan="4" width="66">
+<p>　<img src="http://upload.mironline.co.kr/mir2/11/20161109143356.png" alt="" /></p>
+</td>
+<td rowspan="4" width="99">
+<p><strong>천룡신형탈명검</strong></p>
+</td>
+<td width="48">
+<p>20</p>
+</td>
+<td width="48">
+<p>15</p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">
+<p>　</p>
+</td>
+<td width="51">
+<p>　</p>
+</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 파괴 17~72, 정확+1, 공격속도+2</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사 : 파괴 9~32, 마법 9~28, 정확+1, 공격속도+2</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사 : 파괴 11~42, 도력 8~25, 정확+1, 공격속도+2</p>
+</td>
+</tr>
+<tr>
+<td rowspan="2" width="66">
+<p>　<img src="http://upload.mironline.co.kr/mir2/11/20161109143402.png" alt="" /></p>
+</td>
+<td rowspan="2" width="99">
+<p><strong>천룡신형탈명궁</strong></p>
+</td>
+<td width="48">
+<p>20</p>
+</td>
+<td width="48">
+<p>13</p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">
+<p>　</p>
+</td>
+<td width="51">
+<p>　</p>
+</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수 : 파괴 16~64, 마법 5~20 </p>
+</td>
+</tr>
+<tr>
+<td rowspan="2" width="66">
+<p>　<img src="http://upload.mironline.co.kr/mir2/11/20161109143408.png" alt="" /></p>
+</td>
+<td rowspan="2" width="99">
+<p><strong>천룡신형탈명도</strong></p>
+</td>
+<td width="48">
+<p>20</p>
+</td>
+<td width="48">
+<p>15</p>
+</td>
+<td width="48">
+<p>60</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">
+<p>　</p>
+</td>
+<td width="51">
+<p>　</p>
+</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객 : 파괴 14~60, 정확+2, 민첩+1 </p>
+</td>
+</tr>
+<tr>
+<td rowspan="6" width="66">
+<p>　<img src="http://upload.mironline.co.kr/mir2/11/20161109143425.png" alt="" /></p>
+</td>
+<td rowspan="6" width="99">
+<p><strong>천룡신행보</strong></p>
+</td>
+<td width="48">
+<p>20</p>
+</td>
+<td width="48">
+<p>1</p>
+</td>
+<td width="48">
+<p>8</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">
+<p>　</p>
+</td>
+<td width="51">
+<p>　</p>
+</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>전사 : 파괴 1~2, 방어 2~4, 양손무게+21, 착용무게+17</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>술사&nbsp;:&nbsp;마력 1~2, 방어 2~4, 양손무게+21, 착용무게+17</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>도사&nbsp;:&nbsp;도력 1~2, 방어 2~4, 양손무게+21, 착용무게+17</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>자객&nbsp;: 파괴 1~2, 방어 2~4, 양손무게+21, 착용무게+17</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>궁수&nbsp;: 파괴 1~2, 방어 2~4, 양손무게+21, 착용무게+17</p>
+</td>
+</tr>
+<tr>
+<td rowspan="2" width="66">
+<p>　<img src="http://upload.mironline.co.kr/mir2/11/20161109143432.png" alt="" /></p>
+</td>
+<td rowspan="2" width="99">
+<p><strong>천룡반향대</strong></p>
+</td>
+<td width="48">
+<p>20</p>
+</td>
+<td width="48">
+<p>1</p>
+</td>
+<td width="48">
+<p>10</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="48">
+<p>　</p>
+</td>
+<td width="59">
+<p>　</p>
+</td>
+<td width="51">
+<p>　</p>
+</td>
+<td width="37">
+<p>신물</p>
+</td>
+</tr>
+<tr>
+<td colspan="9" width="435">
+<p>방어 2~6, 마방 2~3, 가방무게+40</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="%E7%88%86%E5%8E%8B%E5%A5%97%E8%A3%85%ED%8F%AD%EC%95%95" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>爆压套装/폭압</h2>
+<p>착용 시 사용자의 살을 파고 들어가 고통을 주며 3개의 장신구를 전부 착용하게 되면 외부의 고통이 잊혀질 만큼 극심한 고통에 휩싸이게 됩니다.<br />
+세트아이템을 모두 착용할 경우 방어+1, 민첩+1 상승, 아이템 착용 시 직업에 따라 능력치가 변화하는 아이템으로 착용하지 않았을 때에는 아이템의 능력치를 알 수 없습니다.</p>
+<table class="tbl_guide" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th width="30%" colspan="2"><strong>명칭</strong></th>
+<th><strong>레벨</strong></th>
+<th><strong>무게</strong></th>
+<th><strong>내구</strong></th>
+<th><strong>파괴</strong></th>
+<th><strong>마법</strong></th>
+<th><strong>도력</strong></th>
+<th><strong>방어</strong></th>
+<th><strong>마방</strong></th>
+<th><strong>각성</strong></th></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z7301041667.jpg"></td>
+<td rowspan="2"><strong>폭압의목걸이</strong></td>
+<td>56</td>
+<td>2</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<p align="left">직업에 따라 착용시 능력치 변화됨<br>전사 : 파괴 4-10 / 술사 : 마법 2-10 / 도사 : 도력 2-10 / 자객 : 파괴 4-10</p></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z7302083333.jpg"></td>
+<td rowspan="2"><strong>폭압의반지</strong></td>
+<td>52</td>
+<td>2</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<p align="left">직업에 따라 착용시 능력치 변화됨<br>전사 : 파괴 2~11 / 술사: 마법 1~9 / 도사: 도력 1~8 / 자객 : 파괴 2~11</p></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z7303009259.jpg"></td>
+<td rowspan="2"><strong>폭압의팔찌</strong></td>
+<td>50</td>
+<td>3</td>
+<td>10</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<p align="left">직업에 따라 착용시 능력치 변화됨<br>전사 : 방어 0~1, 파괴 2-~ / 술사: 마방 0~2, 마법 2~6<br>도사: 신성+2, 마방 0~1, 파괴 1~5, 도력 2-6 / 자객: 마방 1~3, 파괴 2~5 </p></td></tr></tbody></table>
+<h2><a id="%E7%9B%91%E8%A7%86%E8%80%85%E5%A5%97%E8%A3%85%EA%B0%90%EC%8B%9C%EC%9E%90" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>监视者套装/감시자</h2>
+<p>강력한 지옥의 기운을 담고 있으며, 3개를 모았을 경우 그 기운들이 착용자를 완전히 감싸며 보호합니다.<br />
+세트 아이템을 모두 착용할 경우 중독저항+1, 마법저항+1 상승, 아이템 착용 시 직업에 따라 능력치가 변화되는 아이템으로 착용하지 않았을 때에는 아이템의 능력치를 알 수 없습니다.</p>
+<table class="tbl_guide" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th width="30%" colspan="2"><strong>명칭</strong></th>
+<th><strong>레벨</strong></th>
+<th><strong>무게</strong></th>
+<th><strong>내구</strong></th>
+<th><strong>파괴</strong></th>
+<th><strong>마법</strong></th>
+<th><strong>도력</strong></th>
+<th><strong>방어</strong></th>
+<th><strong>마방</strong></th>
+<th><strong>각성</strong></th></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6952893519.png"><br><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6954166667.png"></td>
+<td rowspan="2"><strong>감시자갑옷</strong></td>
+<td>52 
+<p></p></td>
+<td>&nbsp; 
+<p></p></td>
+<td>45 
+<p></p></td>
+<td>&nbsp; 
+<p></p></td>
+<td>&nbsp; 
+<p></p></td>
+<td>&nbsp; 
+<p></p></td>
+<td>&nbsp; 
+<p></p></td>
+<td>&nbsp; 
+<p></p></td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<p align="left">전사 : 무게 65, 파괴 1~1, 방어 9~22, 마방 4~8<br>술사 : 무게 25, 마법 0~7, 방어 6~15, 마방 5~9 <br>도사 : 무게 30, 파괴 1~1, 도력 0~6, 방어 7~17, 마방 4~9<br>자객 : 무게 30, 파괴 1~1, 방어 8~16, 마방 5~13</p></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6955787037.png"></td>
+<td rowspan="2"><strong>감시자투구</strong></td>
+<td>43 
+<p></p></td>
+<td>&nbsp; 
+<p></p></td>
+<td>18 
+<p></p></td>
+<td>&nbsp; 
+<p></p></td>
+<td>&nbsp; 
+<p></p></td>
+<td>&nbsp; 
+<p></p></td>
+<td>&nbsp; 
+<p></p></td>
+<td>&nbsp;</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<p>전사 : 무게 25, 방어 4~8, 마방 3~3<br>술사 : 무게 9, 방어 3~4, 마방 3~3, 마법 2~2<br>도사: 무게 9, 방어 4~5, 마방 2~2, 도력 2~2<br>자객: 무게 9, 방어 3~5, 마방 4-5</p></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6956944444.png"></td>
+<td rowspan="2"><strong>감시자장갑</strong></td>
+<td>50 
+<p></p></td>
+<td>&nbsp; 
+<p></p></td>
+<td>10 
+<p></p></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<p>전사 :&nbsp;방어 1~2, 파괴 2~5, 무게 5,<br>술사 : 마방 1~2, 마법 2~5, 무게 2<br>도사 : 신성+2, 마방 1~2, 파괴 1~4, 도력 2~5, 무게 4<br>자객 : 마방 2~2, 파괴 2~4, 무게 4</p></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6958101852.png"></td>
+<td rowspan="2"><strong>감시자신발</strong></td>
+<td>47 
+<p></p></td>
+<td>2 
+<p></p></td>
+<td>9 
+<p></p></td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>성물</td></tr>
+<tr>
+<td colspan="9">
+<p>전사 : 방어 0~2, 양손무게+2, 착용무게+6, 무게 2<br>술사 : 방어 0~1, 양손무게+2, 착용무게+6, 무게 2<br>도사 : 방어 1~1, 양손무게+2, 착용무게+6, 무게 2<br>자객 : 방어 1~1, 양손무게+2, 착용무게+6, 무게 2</p></td></tr></tbody></table>
+<h2><a id="%E8%A1%80%E9%BE%99%E5%A5%97%E8%A3%85%ED%98%88%EB%A3%A1" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>血龙套装/혈룡</h2>
+<p>제조상궁을 통해 제작 가능, 세트 아이템을 모두 착용할 경우 도력+2, HP+15, MP+20, 신성+1, 정확+1 상승합니다.</p>
+<table class="tbl_guide" border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody>
+<tr>
+<th width="30%" colspan="2"><strong>명칭</strong></th>
+<th><strong>레벨</strong></th>
+<th><strong>무게</strong></th>
+<th><strong>내구</strong></th>
+<th><strong>파괴</strong></th>
+<th><strong>마법</strong></th>
+<th><strong>도력</strong></th>
+<th><strong>방어</strong></th>
+<th><strong>마방</strong></th>
+<th><strong>각성</strong></th></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6634490741.jpg"></td>
+<td rowspan="2"><strong>혈룡투구</strong></td>
+<td>45</td>
+<td>4</td>
+<td>12</td>
+<td>&nbsp;</td>
+<td>1~2</td>
+<td>1~2</td>
+<td>3~7</td>
+<td>3~3</td>
+<td>보물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">대가-대장 제작 가능 아이템</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6635532407.jpg"></td>
+<td rowspan="2"><strong>혈룡장화</strong></td>
+<td>45</td>
+<td>1</td>
+<td>8</td>
+<td>0~1</td>
+<td>0~1</td>
+<td>0~1</td>
+<td>1~1</td>
+<td>1~1</td>
+<td>보물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">대가-대장 제작 가능 아이템</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6636574074.jpg"></td>
+<td rowspan="2"><strong>혈룡팔찌</strong></td>
+<td>55</td>
+<td>1</td>
+<td>7</td>
+<td>3~6</td>
+<td>2~6</td>
+<td>2~6</td>
+<td>1~2</td>
+<td>0~3</td>
+<td>보물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">대가-대장 제작 가능 아이템</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6637615741.jpg"></td>
+<td rowspan="2"><strong>혈룡반지</strong></td>
+<td>52</td>
+<td>1</td>
+<td>6</td>
+<td>3~11</td>
+<td>1~9</td>
+<td>1~8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>보물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">대가-대장 제작 가능 아이템</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6638657407.jpg"></td>
+<td rowspan="2"><strong>혈룡허리띠</strong></td>
+<td>55</td>
+<td>1</td>
+<td>8</td>
+<td></td>
+<td></td>
+<td></td>
+<td>&nbsp;2~3</td>
+<td>&nbsp;1~2</td>
+<td>보물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">대가-대장 제작 가능 아이템</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6639699074.jpg"></td>
+<td rowspan="2"><strong>혈룡목걸이</strong></td>
+<td>55</td>
+<td>1</td>
+<td>8</td>
+<td>4~10</td>
+<td>3~9</td>
+<td>3~8</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>보물</td></tr>
+<tr>
+<td colspan="9">
+<div align="left">대가-대장 제작 가능 아이템</div></td></tr>
+<tr>
+<td bgcolor="#000000" rowspan="2"><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6640625.jpg"><br><img style="BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px" src="http://file2.web.mironline.co.kr/mir2/201305/41418z6641319444.jpg"></td>
+<td rowspan="2"><strong>혈룡갑주</strong></td>
+<td>50</td>
+<td>&nbsp;</td>
+<td>45</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>보물</td></tr>
+<tr>
+<td colspan="9">
+<p>직업에 따라 착용시 능력치 변화됨, 대가-대장 제작 가능 아이템<br>전사 : 무게 65, 파괴 1, 방어 10~28, 마방 0~5<br>술사 : 무게 25, 마력 0~8, 방어 3~12, 마방 6~9<br>도사 : 무게 30, 도력 0~7, 방어 4~14, 마방 5~8<br>자객 : 무게 30, 파괴 2~2, 방어 5~14, 마방 6~13<br></p></td></tr></tbody></table>
+</div></body></html>
